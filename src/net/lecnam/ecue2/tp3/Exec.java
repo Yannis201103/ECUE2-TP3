@@ -1,12 +1,24 @@
 package net.lecnam.ecue2.tp3;
 
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Exec  {
-
     public static void main(String[] args) {
+        Exercice1.Point point = new Exercice1.Point(6,7);
 
+        point.translate(1,1);
+        System.out.println(point.pointLatitude);
+        System.out.println(point.pointLongitude);
+
+        Exercice1.Point p = new Exercice1.Point(2,4);
+
+        System.out.println(point.equals(p));
+
+        System.out.println(point.toString());
+
+        System.out.println(point.retourneDistance(p));
     }
 
 }
