@@ -30,5 +30,13 @@ public class Exercice2 {
             this.x += x;
             this.y += y;
         }
+
+        boolean contient(Exercice1.Point p) {
+            if ((this.x - this.longueur2) < p.pointLongitude && p.pointLongitude < this.x || (this.y + this.longueur1) > p.pointLatitude && this.y < p.pointLatitude){
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }

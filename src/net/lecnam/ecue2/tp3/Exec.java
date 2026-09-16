@@ -23,6 +23,8 @@ public class Exec  {
         Exercice2.Rectangle rectangle = new Exercice2.Rectangle(p,1,2);
 
         Exercice2.Rectangle rectangle2 = new Exercice2.Rectangle(1,2,3,4);
+
+        System.out.println(rectangle2.contient(p));
     }
 
 }
