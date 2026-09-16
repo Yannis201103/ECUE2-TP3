@@ -11,10 +11,9 @@ public class Exercice1 {
             this.pointLongitude = pointLongitude;
         }
 
-        boolean translate(double x, double y) {
+        void translate(double x, double y) {
             this.pointLatitude += x;
             this.pointLongitude += y;
-            return false;
         }
 
         public boolean equals(Object o) {
