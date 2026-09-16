@@ -38,5 +38,19 @@ public class Exercice2 {
                 return false;
             }
         }
+
+        boolean equals(Rectangle r) {
+            if (this == r) return true;
+            if (r == null || getClass() != r.getClass()) return false;
+            Rectangle rectangle = (Rectangle) r;
+            return Double.compare(rectangle.x,x) == 0 &&
+                    Double.compare(rectangle.y,y) == 0 &&
+                    Double.compare(rectangle.longueur1,longueur1) == 0;
+
+        }
+
+        public String toString() {
+            return "Le rectangle de longeur " + this.longueur1 + " et " + this.longueur2 + " a une surface de " + Surface();
+        }
     }
 }
