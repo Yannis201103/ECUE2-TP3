@@ -22,8 +22,13 @@ public class Exercice2 {
             this.longueur2 = longueur2;
         }
 
-        double Surface(Rectangle r){
-            return r.longueur2 * r.longueur1;
+        double Surface(){
+            return this.longueur2 * this.longueur1;
+        }
+
+        void translate(double x, double y){
+            this.x += x;
+            this.y += y;
         }
     }
 }
