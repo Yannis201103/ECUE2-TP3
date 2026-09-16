@@ -21,5 +21,9 @@ public class Exercice2 {
             this.longueur1 = longueur1;
             this.longueur2 = longueur2;
         }
+
+        double Surface(Rectangle r){
+            return r.longueur2 * r.longueur1;
+        }
     }
 }
