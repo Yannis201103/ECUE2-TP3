@@ -27,6 +27,8 @@ public class Exec  {
         System.out.println(rectangle2.equals(rectangle3));
 
         System.out.println(rectangle2.toString());
+
+        Dessin.ajout(rectangle);
     }
 
 }
