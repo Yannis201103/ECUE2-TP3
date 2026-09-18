@@ -1,41 +1,28 @@
 package net.lecnam.ecue2.tp3;
 
-
-public class Exec  {
+public class Exec {
     public static void main(String[] args) {
-        Exercice1.Point point = new Exercice1.Point(6,7);
-
-        point.translate(1,1);
-        System.out.println(point.pointLatitude);
-        System.out.println(point.pointLongitude);
-
-        Exercice1.Point p = new Exercice1.Point(2,4);
-
-        System.out.println(point.equals(p));
-
-        System.out.println(point.toString());
-
-        System.out.println(point.retourneDistance(p));
-
-        Exercice2.Rectangle rectangle = new Exercice2.Rectangle(p,1,2);
-
-        Exercice2.Rectangle rectangle2 = new Exercice2.Rectangle(2,2,3,4);
-        Exercice2.Rectangle rectangle3 = new Exercice2.Rectangle(2,2,3,4);
-
-        System.out.println(rectangle2.contient(p));
-
-        System.out.println(rectangle2.equals(rectangle3));
-
-        System.out.println(rectangle2.toString());
 
         Dessin dessin = new Dessin();
 
-        Dessin.ajout(rectangle);
-        Dessin.ajout(rectangle2);
+        Exercice2.Rectangle rectangle1 =
+                new Exercice2.Rectangle(2, 2, 3, 4);
 
-        System.out.println(dessin.retourneSurface());
+        Exercice2.Rectangle rectangle2 =
+                new Exercice2.Rectangle(5, 5, 6, 7);
+
+        dessin.ajout(rectangle1);
+        dessin.ajout(rectangle2);
+
+        System.out.println("Surface totale : " + dessin.retourneSurface());
+
+        System.out.println("Plus grand rectangle :");
+        System.out.println(dessin.retournePlusGrandRectangle());
 
         dessin.translate(10, 10);
-    }
 
+        System.out.println("Après déplacement :");
+        System.out.println(dessin.retournePlusGrandRectangle());
+
+    }
 }
