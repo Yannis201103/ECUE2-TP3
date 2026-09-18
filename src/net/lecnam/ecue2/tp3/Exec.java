@@ -28,7 +28,14 @@ public class Exec  {
 
         System.out.println(rectangle2.toString());
 
+        Dessin dessin = new Dessin();
+
         Dessin.ajout(rectangle);
+        Dessin.ajout(rectangle2);
+
+        System.out.println(dessin.retourneSurface());
+
+        dessin.translate(10, 10);
     }
 
 }

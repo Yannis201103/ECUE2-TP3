@@ -22,7 +22,7 @@ public class Exercice2 {
             this.longueur2 = longueur2;
         }
 
-        double Surface(){
+        public double Surface(){
             return this.longueur2 * this.longueur1;
         }
 
@@ -52,5 +52,6 @@ public class Exercice2 {
         public String toString() {
             return "Le rectangle de longeur " + this.longueur1 + " et " + this.longueur2 + " a une surface de " + Surface();
         }
+
     }
 }
