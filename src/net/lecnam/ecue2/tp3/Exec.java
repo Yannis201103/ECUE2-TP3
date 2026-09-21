@@ -11,6 +11,12 @@ public class Exec {
         Exercice2.Rectangle rectangle2 =
                 new Exercice2.Rectangle(5, 5, 6, 7);
 
+        Exercice1.Point point = new Exercice1.Point(5,4);
+
+        Carre carre = new Carre(point, 6);
+
+        System.out.println("Surface totale du carre : " + carre.Surface());
+
         dessin.ajout(rectangle1);
         dessin.ajout(rectangle2);
 
@@ -23,6 +29,7 @@ public class Exec {
 
         System.out.println("Après déplacement :");
         System.out.println(dessin.retournePlusGrandRectangle());
+
 
     }
 }
