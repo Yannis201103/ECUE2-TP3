@@ -11,25 +11,52 @@ public class Exec {
         Exercice2.Rectangle rectangle2 =
                 new Exercice2.Rectangle(5, 5, 6, 7);
 
-        Exercice1.Point point = new Exercice1.Point(5,4);
+        Exercice1.Point point = new Exercice1.Point(10,5);
 
-        Carre carre = new Carre(point, 6);
+        Carre carre1 =
+                new Carre(point, 10);
 
-        System.out.println("Surface totale du carre : " + carre.Surface());
+        Carre carre2 =
+                new Carre(point, 20);
 
         dessin.ajout(rectangle1);
         dessin.ajout(rectangle2);
+        dessin.ajout(carre1);
+        dessin.ajout(carre2);
 
-        System.out.println("Surface totale : " + dessin.retourneSurface());
+        System.out.println("Surface rectangle 1 : " + rectangle1.Surface());
+
+        System.out.println("Surface rectangle 2 : " + rectangle2.Surface());
+
+        System.out.println("Surface carré 1 : " + carre1.Surface());
+
+        System.out.println("Surface carré 2 : " + carre2.Surface());
+
+        System.out.println();
+        System.out.println("Surface totale : "
+                + dessin.retourneSurface());
+
+        System.out.println();
+        System.out.println("Plus grand rectangle :");
+        System.out.println(dessin.retournePlusGrandRectangle());
+
+        System.out.println();
+        System.out.println("Plus grand carré :");
+        System.out.println(dessin.retournePlusGrandCarre());
+
+        dessin.translate(10, 10);
+
+        System.out.println();
+        System.out.println("Après déplacement :");
 
         System.out.println("Plus grand rectangle :");
         System.out.println(dessin.retournePlusGrandRectangle());
 
-        dessin.translate(10, 10);
+        System.out.println("Plus grand carré :");
+        System.out.println(dessin.retournePlusGrandCarre());
 
-        System.out.println("Après déplacement :");
-        System.out.println(dessin.retournePlusGrandRectangle());
-
-
+        System.out.println();
+        System.out.println("Toutes les formes du dessin :");
+        System.out.println(dessin);
     }
 }

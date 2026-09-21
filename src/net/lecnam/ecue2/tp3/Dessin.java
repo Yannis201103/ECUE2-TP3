@@ -2,59 +2,116 @@ package net.lecnam.ecue2.tp3;
 
 public class Dessin {
 
-    private Exercice2.Rectangle[] rectangles;
-    private int nombreRectangles;
+    private Object[] formes;
+    private int nombreFormes;
 
     public Dessin() {
-        rectangles = new Exercice2.Rectangle[10];
-        nombreRectangles = 0;
+        formes = new Object[10];
+        nombreFormes = 0;
     }
 
     public void ajout(Exercice2.Rectangle rectangle) {
-        if (nombreRectangles < 10) {
-            rectangles[nombreRectangles] = rectangle;
-            nombreRectangles++;
+        if (nombreFormes < 10) {
+            formes[nombreFormes] = rectangle;
+            nombreFormes++;
+        }
+    }
+
+    public void ajout(Carre carre) {
+        if (nombreFormes < 10) {
+            formes[nombreFormes] = carre;
+            nombreFormes++;
         }
     }
 
     public double retourneSurface() {
         double surfaceTotale = 0;
 
-        for (int i = 0; i < nombreRectangles; i++) {
-            surfaceTotale += rectangles[i].Surface();
+        for (int i = 0; i < nombreFormes; i++) {
+
+            if (formes[i] instanceof Exercice2.Rectangle) {
+                Exercice2.Rectangle rectangle =
+                        (Exercice2.Rectangle) formes[i];
+
+                surfaceTotale += rectangle.Surface();
+
+            } else if (formes[i] instanceof Carre) {
+                Carre carre =
+                        (Carre) formes[i];
+
+                surfaceTotale += carre.Surface();
+            }
         }
 
         return surfaceTotale;
     }
 
     public void translate(double x, double y) {
-        for (int i = 0; i < nombreRectangles; i++) {
-            rectangles[i].translate(x, y);
+        for (int i = 0; i < nombreFormes; i++) {
+
+            if (formes[i] instanceof Exercice2.Rectangle) {
+                Exercice2.Rectangle rectangle =
+                        (Exercice2.Rectangle) formes[i];
+
+                rectangle.translate(x, y);
+
+            } else if (formes[i] instanceof Carre) {
+                Carre carre =
+                        (Carre) formes[i];
+
+                carre.translate(x, y);
+            }
         }
     }
 
     public Exercice2.Rectangle retournePlusGrandRectangle() {
-        if (nombreRectangles == 0) {
-            return null;
-        }
 
-        Exercice2.Rectangle plusGrand = rectangles[0];
+        Exercice2.Rectangle plusGrand = null;
 
-        for (int i = 1; i < nombreRectangles; i++) {
-            if (rectangles[i].Surface() > plusGrand.Surface()) {
-                plusGrand = rectangles[i];
+        for (int i = 0; i < nombreFormes; i++) {
+
+            if (formes[i] instanceof Exercice2.Rectangle) {
+
+                Exercice2.Rectangle rectangle =
+                        (Exercice2.Rectangle) formes[i];
+
+                if (plusGrand == null
+                        || rectangle.Surface() > plusGrand.Surface()) {
+                    plusGrand = rectangle;
+                }
             }
         }
 
         return plusGrand;
     }
-    // ICI
+
+    public Carre retournePlusGrandCarre() {
+
+        Carre plusGrand = null;
+
+        for (int i = 0; i < nombreFormes; i++) {
+
+            if (formes[i] instanceof Carre) {
+
+                Carre carre =
+                        (Carre) formes[i];
+
+                if (plusGrand == null
+                        || carre.Surface() > plusGrand.Surface()) {
+                    plusGrand = carre;
+                }
+            }
+        }
+
+        return plusGrand;
+    }
+
     @Override
     public String toString() {
         String resultat = "";
 
-        for (int i = 0; i < nombreRectangles; i++) {
-            resultat += rectangles[i] + "\n";
+        for (int i = 0; i < nombreFormes; i++) {
+            resultat += formes[i] + "\n";
         }
 
         return resultat;
